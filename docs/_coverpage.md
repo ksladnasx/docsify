@@ -10,9 +10,9 @@
   
   <!-- 动态标签 -->
   <div class="tag-cloud" style="margin:25px auto;max-width:600px;">
-    <span class="tag">有意思</span>
-    <span class="tag">创意无限</span>
-    <span class="tag">动效爱好者</span>
+    <span class="tags">有意思</span>
+    <span class="tags">创意无限</span>
+    <span class="tags">动效爱好者</span>
   </div>
   
   <!-- 按钮组（添加动效） -->
@@ -96,7 +96,8 @@
 
   
   /* 标签浮动动画 */
-  .tag {
+  .tags {
+    color:black;
     display: inline-block;
     background: rgba(255,255,255,0.15);
     backdrop-filter: blur(5px);
@@ -106,9 +107,9 @@
     animation: float 6s ease-in-out infinite;
     animation-delay: calc(var(--i) * 1s);
   }
-  .tag:nth-child(1) { --i: 0; }
-  .tag:nth-child(2) { --i: 1; }
-  .tag:nth-child(3) { --i: 2; }
+  .tags:nth-child(1) { --i: 0; }
+  .tags:nth-child(2) { --i: 1; }
+  .tags:nth-child(3) { --i: 2; }
   
   @keyframes float {
     0%, 100% { transform: translateY(0); }

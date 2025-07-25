@@ -1,13 +1,13 @@
 # <i class="fas fa-laptop-code"></i> 个人技术知识库
 
 > **简洁高效 | 实时更新 | 全栈技术 | 开发笔记**  
-> 本知识库使用Docsify构建，托管于GitHub Pages，专注于前端开发和全栈技术实践。
+> 本个人博客知识库使用Docsify构建，托管于GitHub Pages，专注于前端开发和全栈技术实践。
 > 
 > 🚀 **特点优势**：
-> - 极简配置，专注内容创作
+> - 极简内容，一步到位
 > - Markdown文件直接渲染
-> - 支持数学公式、图表等扩展
-> - 跨设备实时访问
+> - 学习数学公式、图表等扩展
+> - 跨设备实时访问学习
 
 ---
 
@@ -24,10 +24,23 @@
 - [<i class="fas fa-square-root-alt"></i> 公式插件测试](zh-cn/插件公式示例.md) - LaTeX数学公式展示
 
 ### <i class="fas fa-cogs"></i> 站点信息
-- [<i class="fab fa-github"></i> GitHub项目主页](https://github.com/yourusername/yourrepo)
-- [<i class="fas fa-code-branch"></i> 站点构建说明](README.md)
+- [<i class="fab fa-github"></i> GitHub项目主页](https://github.com/ksladnasx)
+- [<i class="fas fa-code-branch"></i> 站点构建说明](#/README.md)
 
 ---
 
-## <i class="fas fa-rocket"></i> 技术栈
+## <i class="fas fa-rocket"></i> 个人技术栈
+- [<img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.AqyudVa9weRE215AAm8LUgAAAA?w=155&h=158&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" style="height:15px;padding-right:10px"/>Vue3](https://cn.vuejs.org/)
+- [<img src="https://element-plus.org/images/element-plus-logo-small.svg" style="height:15px;padding-right:10px"/>ElementPlus](https://element-plus.org/zh-CN/)
+- [<img src="https://www.typescriptlang.org/favicon-32x32.png?v=8944a05a8b601855de116c8a56d3b3ae" style="height:15px;padding-right:10px"/>TypeScript](https://www.typescriptlang.org/)
+- [<img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.bfNVfuKq5NOy_tB-ZD3RMQAAAA?w=140&h=158&c=7&r=0&o=5&dpr=1.5&pid=1.7" style="height:15px;padding-right:10px;"/>Docker](https://www.docker.com/)
+- [<img src="https://nginx.org/favicon.ico" style="height:15px;padding-right:10px"/>Nignx](https://nginx.org/)
+<style> 
+/* 用于Vue链接的小图标居中 */
+ a{
+    display:flex;
+    align-items:center
+ }
+
+</style>
 
