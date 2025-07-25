@@ -10,9 +10,9 @@
   
   <!-- 动态标签 -->
   <div class="tag-cloud" style="margin:25px auto;max-width:600px;">
-    <span class="tags">娱乐至上</span>
-    <span class="tags">闲里偷忙</span>
-    <span class="tags">百无聊赖</span>
+    <span class="tags">有意思</span>
+    <span class="tags">创意无限</span>
+    <span class="tags">动效爱好者</span>
   </div>
   
   <!-- 按钮组（添加动效） -->
@@ -21,7 +21,7 @@
       <i class="fab fa-github"></i> GitHub主页
     </a>
     <!-- 注意这里href的写法，由于项目路由是hash格式的，所以使用相对路由的时候必须带上#/ -->
-    <a href="#/zh-cn/docsify项目创建与部署" class="btn-docs">  
+    <a href="#/zh-cn/todolist建立" class="btn-docs">  
        📚 探索文档
     </a>
   </div>

@@ -1,4 +1,3 @@
-* [让我们从docsify的创建开始](zh-cn/docsify项目创建与部署.md)
 * [最基本的todolist](zh-cn/todolist建立.md)
 * [项目经验总结](zh-cn/项目经验.md)
 * [ElementPlus组件库](zh-cn/element-plus.md)

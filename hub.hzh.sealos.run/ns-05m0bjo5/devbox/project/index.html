@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Docsify + docsify-latex</title>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+</head>
+<body>
+  <div id="app"></div>
+  
+  <!-- 核心Docsify库 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  
+  <!-- 搜索功能实现 -->
+  <script>
+    window.$docsify = {
+      name: '',
+      repo: '',
+      loadSidebar: true,
+       subMaxLevel: 3,             // 子菜单最大层级（建议2~4）
+      coverpage: true,
+      auto2top: true,
+      sidebarDisplayLevel: 1,     // 初始展开层级（1=仅展开一级目录）
+       alias: { 
+      '/.*/_sidebar.md': '/_sidebar.md' // 统一侧边栏路径（可选）
+    },
+      
+      // 搜索配置 [1,2,4](@ref)
+      search: {
+        maxAge: 86400000,      // 缓存有效期(ms)，默认1天
+        paths: 'auto',          // 自动检测所有文档路径
+        placeholder: '输入关键词搜索', // 搜索框提示文本
+        noData: '未找到相关内容',  // 无结果提示
+        depth: 3,               // 搜索标题层级(h1-h3)
+        namespace: 'docs',      // 本地存储命名空间
+        hideOtherSidebarContent: false // 保持侧边栏完整
+      }
+    };
+  </script>
+ 
+<!-- 侧边栏折叠插件 -->
+<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  
+  <!-- 必需：搜索插件 --> 
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  
+  <!-- 流程图支持 -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  
+  <!-- LaTeX数学公式支持 -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
+  
+  <!-- 可选：增强搜索体验 -->
+  <style>
+    /* 搜索框样式优化 */
+    .search input {
+      border-radius: 4px;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+      
+    }
+    
+    /* 搜索结果高亮 */
+    mark {
+      background: #fffd38;
+      color: #000;
+    }
+  </style>
+</body>
+</html>

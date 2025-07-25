@@ -14,7 +14,6 @@
 ## <i class="fas fa-bookmark"></i> 内容索引
 
 ### <i class="fas fa-list-check"></i> 开发实践
-- [<i class="fas fa-sitemap"></i> 让我们从docsify的创建开始](zh-cn/todolist建立.md) - docsify项目创建与部署
 - [<i class="fas fa-check-circle"></i> 最基本的todolist实现](zh-cn/todolist建立.md) - Vue3 + Composition API实现
 - [<i class="fas fa-layer-group"></i> ElementPlus组件库指南](zh-cn/element-plus.md) - 最佳实践与问题排查
 - [<i class="fas fa-sitemap"></i> 项目经验总结](zh-cn/项目经验.md) - 架构设计 & 性能优化方案
