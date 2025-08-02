@@ -1,72 +1,110 @@
-/* 自定义浅色和深色主题样式 */
+/* 自定义浅色和深色主题样式 - 优化版 */
 :root {
-  --main-bg: #f7f7f7;
-  --main-color: #222;
-  --sidebar-bg: #fff;
-  --sidebar-color: #333;
-  --accent: #b99542;
-  --code-bg: #faf8f8;
-  --code-color: #7dbeff;
-  --code-border: #cec1c1;
-  --sidebar-active-bg: #222;
-  --input-bg: #fff;
-  --input-color: #222;
-  --input-border: #ddd;
+  /* 浅色主题 - 采用更柔和的配色 */
+  --main-bg: #fafbfc;
+  --main-color: #24292f;
+  --sidebar-bg: #ffffff;
+  --sidebar-color: #586069;
+  --accent: #0969da;
+  --accent-hover: #1a7f37;
+  --code-bg: #f6f8fa;
+  --code-color: #24292f;
+  --code-border: #d0d7de;
+  --sidebar-active-bg: #f6f8fa;
+  --sidebar-active-color: #0969da;
+  --input-bg: #ffffff;
+  --input-color: #24292f;
+  --input-border: #d0d7de;
   --btn-bg: #ffffff;
-  --btn-color: #222;
-  --btn-border: #42b983;
-  --scrollbar-bg: #eaeaea;
-  --scrollbar-thumb: #bbb;
+  --btn-color: #24292f;
+  --btn-border: #d0d7de;
+  --scrollbar-bg: #f6f8fa;
+  --scrollbar-thumb: #d0d7de;
+  --link-color: #0969da;
+  --link-hover: #1a7f37;
+  --text-muted: #656d76;
+  --border-color: #d0d7de;
+  --shadow-light: rgba(1, 4, 9, 0.08);
+  --shadow-medium: rgba(1, 4, 9, 0.12);
 }
 
 body {
   background: var(--main-bg);
   color: var(--main-color);
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
 }
 
 .sidebar {
   background: var(--sidebar-bg);
-  border-right: 1px solid #333;
+  border-right: 1px solid var(--border-color);
   color: var(--sidebar-color);
+  box-shadow: 2px 0 8px var(--shadow-light);
 }
 
+/* 链接样式优化 */
 a {
-  color: var(--accent);
-  transition: color 0.3s;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
-  
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
 /* 侧边栏选中项高亮 */
-body.dark-theme .sidebar-nav .active,
-body.dark-theme .sidebar-nav li.active > a {
-  color:  #42b983;
-}
-
-
-body.dark-theme .sidebar-nav ,
-body.dark-theme .sidebar-nav li> a {
+.sidebar-nav .active,
+.sidebar-nav li.active > a {
   background: var(--sidebar-active-bg);
-  color: var(--accent);
+  color: var(--sidebar-active-color);
+  font-weight: 600;
+  border-radius: 6px;
+  margin: 2px 8px;
+  padding: 8px 12px;
 }
 
-/* 深色主题 */
+.sidebar-nav li > a {
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 2px 8px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-nav li > a:hover {
+  background: var(--sidebar-active-bg);
+  color: var(--sidebar-active-color);
+}
+
+/* 深色主题 - 采用更舒适的深色配色 */
 body.dark-theme {
-  --main-bg: #181818;
-  --main-color: #c8c3c3;
-  --sidebar-bg: #222;
-  --sidebar-color: #eaeaea;
-  --accent: #c3cec9;
-  --input-bg: #222;
-  --input-color: #eaeaea;
-  --input-border: #444;
-  --btn-bg: #222;
-  --btn-color: #eaeaea;
-  --btn-border: #42b983;
-  --scrollbar-bg: #222;
-  --scrollbar-thumb: #444;
-  --code-bg: #252c36;
-  --code-color: #d8834a;    
-  --code-border: #006efd;
+  --main-bg: #0d1117;
+  --main-color: #c9d1d9;
+  --sidebar-bg: #161b22;
+  --sidebar-color: #8b949e;
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --code-bg: #161b22;
+  --code-color: #c9d1d9;
+  --code-border: #30363d;
+  --sidebar-active-bg: #21262d;
+  --sidebar-active-color: #58a6ff;
+  --input-bg: #0d1117;
+  --input-color: #c9d1d9;
+  --input-border: #30363d;
+  --btn-bg: #21262d;
+  --btn-color: #c9d1d9;
+  --btn-border: #30363d;
+  --scrollbar-bg: #161b22;
+  --scrollbar-thumb: #30363d;
+  --link-color: #58a6ff;
+  --link-hover: #79c0ff;
+  --text-muted: #8b949e;
+  --border-color: #30363d;
+  --shadow-light: rgba(1, 4, 9, 0.3);
+  --shadow-medium: rgba(1, 4, 9, 0.4);
 }
 
 body.dark-theme {
@@ -74,168 +112,225 @@ body.dark-theme {
   color: var(--main-color);
 }
 
-
-body.dark-theme .markdown-section span {
-    color: #109cff;
-    font-weight: 600
-}
-body.dark-theme .markdown-section strong {
-    color: #0aa4c7;
-    font-weight: 600
-}
-
+/* 深色主题下的侧边栏样式 */
 body.dark-theme .sidebar {
   background: var(--sidebar-bg);
+  box-shadow: 2px 0 8px var(--shadow-light);
 }
+
+body.dark-theme .sidebar-nav .active,
+body.dark-theme .sidebar-nav li.active > a {
+  background: var(--sidebar-active-bg);
+  color: var(--sidebar-active-color);
+}
+
+body.dark-theme .sidebar-nav li > a:hover {
+  background: var(--sidebar-active-bg);
+  color: var(--sidebar-active-color);
+}
+
+/* 代码块样式优化 */
 body pre,
 body code,
 body .markdown-section pre,
 body .markdown-section code {
   background: var(--code-bg) !important;
   color: var(--code-color) !important;
-}
-
-
-
-/* 代码块暗黑样式 */
-body.dark-theme pre,
-body.dark-theme code,
-body.dark-theme .markdown-section pre,
-body.dark-theme .markdown-section code {
-  background: var(--code-bg) !important;
-  color: var(--code-color) !important;
-}
-
-body.dark-theme .search{
-    border-bottom:1px solid rgb(61, 78, 85) !important;;
-}
-
-body.dark-theme pre{
-    
   border: 1px solid var(--code-border) !important;
-}
-body pre{
-    
-  border: 1px solid var(--code-border) !important;
+  border-radius: 6px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 }
 
-body.dark-theme pre,
-body.dark-theme .markdown-section pre {
-  box-shadow: 0 2px 8px rgba(20,40,80,0.25);
+body pre,
+body .markdown-section pre {
+  box-shadow: 0 2px 8px var(--shadow-light);
+  padding: 16px;
+  margin: 16px 0;
 }
 
-/*  */
-
-
-/* 代码高亮优化（prism.js） */
+/* 深色主题代码高亮优化 */
 body.dark-theme .token.comment,
 body.dark-theme .token.prolog,
 body.dark-theme .token.doctype,
 body.dark-theme .token.cdata {
-  color: #6a9955;
+  color: #8b949e;
 }
+
 body.dark-theme .token.punctuation {
-  color: #d4d4d4;
+  color: #c9d1d9;
 }
-body.dark-theme .token.property,
-body.dark-theme .token.tag,
-body.dark-theme .token.comment,
-body.dark-theme .token.prolog,
-body.dark-theme .token.doctype,
-body.dark-theme .token.cdata {
-  color: #5c7e99;
-}
-body.dark-theme .token.punctuation {
-  color: #b6c2e1;
-}
+
 body.dark-theme .token.property,
 body.dark-theme .token.tag,
 body.dark-theme .token.constant,
 body.dark-theme .token.symbol,
 body.dark-theme .token.deleted {
-  color: #ffb86c;
+  color: #ff7b72;
 }
+
 body.dark-theme .token.boolean,
 body.dark-theme .token.number {
-  color: #8be9fd;
+  color: #79c0ff;
 }
+
 body.dark-theme .token.selector,
 body.dark-theme .token.attr-name,
 body.dark-theme .token.string,
 body.dark-theme .token.char,
 body.dark-theme .token.builtin,
 body.dark-theme .token.inserted {
-  color: #a3e7a3;
+  color: #a5d6ff;
 }
+
 body.dark-theme .token.operator,
 body.dark-theme .token.entity,
 body.dark-theme .token.url,
 body.dark-theme .language-css .token.string,
 body.dark-theme .style .token.string {
-  color: #c3e1ff;
+  color: #ffa657;
 }
+
 body.dark-theme .token.atrule,
 body.dark-theme .token.attr-value,
 body.dark-theme .token.keyword {
-  color: #82aaff;
+  color: #ff7b72;
 }
+
 body.dark-theme .token.function,
 body.dark-theme .token.class-name {
-  color: #ffd700;
+  color: #d2a8ff;
 }
+
 body.dark-theme .token.regex,
 body.dark-theme .token.important {
-  color: #ff5370;
-  background: var(--input-bg) !important;
-  color: var(--input-color) !important;
-  border: 1px solid var(--input-border) !important;
+  color: #ffa198;
 }
 
-/* 按钮暗黑样式 */
-body.dark-theme button,
-body.dark-theme .btn,
-body.dark-theme input[type="button"],
-body.dark-theme input[type="submit"] {
-  background: transparent;
-  color: var(--btn-color) !important;
+/* 搜索框样式优化 */
+body.dark-theme .search {
+  border-bottom: 1px solid var(--border-color) !important;
 }
 
-body.dark-theme input[type="button"]:hover,
-body.dark-theme input[type="submit"]:hover {
-  background: var(--accent) !important;
-  color: #fff !important;
-}
-
-/* 搜索框暗黑样式 */
 body.dark-theme .search input {
   background: var(--input-bg) !important;
   color: var(--input-color) !important;
   border: 1px solid var(--input-border) !important;
+  border-radius: 6px;
+  padding: 8px 12px;
 }
 
-/* 滚动条暗黑样式 */
-body.dark-theme ::-webkit-scrollbar {
+/* 按钮样式优化 */
+body.dark-theme button,
+body.dark-theme .btn,
+body.dark-theme input[type="button"],
+body.dark-theme input[type="submit"] {
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  border: 1px solid var(--btn-border);
+  border-radius: 6px;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+}
+
+body.dark-theme button:hover,
+body.dark-theme .btn:hover,
+body.dark-theme input[type="button"]:hover,
+body.dark-theme input[type="submit"]:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+
+/* 滚动条样式优化 */
+::-webkit-scrollbar {
+  width: 8px;
   background: var(--scrollbar-bg);
 }
-body.dark-theme ::-webkit-scrollbar-thumb {
+
+::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
+  border-radius: 4px;
 }
 
-/* 主题切换按钮样式 */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* 主题切换按钮样式优化 */
 #theme-toggle-btn button {
   background: var(--sidebar-bg);
   color: var(--main-color);
-  border: 1px solid var(--accent);
-  border-radius: 20px;
-  padding: 6px 18px;
-  font-size: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: background 0.3s, color 0.3s;
-}
-#theme-toggle-btn button:hover {
-  background: var(--accent);
-  color: #fff;
+  box-shadow: 0 1px 3px var(--shadow-light);
+  transition: all 0.2s ease;
 }
 
+#theme-toggle-btn button:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+/* 文本样式优化 */
+body.dark-theme .markdown-section span {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+body.dark-theme .markdown-section strong {
+  color: var(--accent-hover);
+  font-weight: 600;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .sidebar {
+    box-shadow: none;
+  }
+  
+  #theme-toggle-btn button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .sidebar {
+    box-shadow: none;
+  }
+  
+  #theme-toggle-btn button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* 侧边栏收起按钮样式优化 */
+.sidebar-toggle {
+  background: transparent !important;
+  border: none !important;
+  color: var(--main-color) !important;
+  padding: 8px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: none !important;
+}
+
+
+
+/* 深色主题下的侧边栏收起按钮 */
+body.dark-theme .sidebar-toggle {
+  background: transparent !important;
+  color: var(--main-color) !important;
+}
 
