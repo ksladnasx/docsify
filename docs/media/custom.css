@@ -1,0 +1,241 @@
+/* 自定义浅色和深色主题样式 */
+:root {
+  --main-bg: #f7f7f7;
+  --main-color: #222;
+  --sidebar-bg: #fff;
+  --sidebar-color: #333;
+  --accent: #b99542;
+  --code-bg: #faf8f8;
+  --code-color: #7dbeff;
+  --code-border: #cec1c1;
+  --sidebar-active-bg: #222;
+  --input-bg: #fff;
+  --input-color: #222;
+  --input-border: #ddd;
+  --btn-bg: #ffffff;
+  --btn-color: #222;
+  --btn-border: #42b983;
+  --scrollbar-bg: #eaeaea;
+  --scrollbar-thumb: #bbb;
+}
+
+body {
+  background: var(--main-bg);
+  color: var(--main-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar {
+  background: var(--sidebar-bg);
+  border-right: 1px solid #333;
+  color: var(--sidebar-color);
+}
+
+a {
+  color: var(--accent);
+  transition: color 0.3s;
+}
+  
+/* 侧边栏选中项高亮 */
+body.dark-theme .sidebar-nav .active,
+body.dark-theme .sidebar-nav li.active > a {
+  color:  #42b983;
+}
+
+
+body.dark-theme .sidebar-nav ,
+body.dark-theme .sidebar-nav li> a {
+  background: var(--sidebar-active-bg);
+  color: var(--accent);
+}
+
+/* 深色主题 */
+body.dark-theme {
+  --main-bg: #181818;
+  --main-color: #c8c3c3;
+  --sidebar-bg: #222;
+  --sidebar-color: #eaeaea;
+  --accent: #c3cec9;
+  --input-bg: #222;
+  --input-color: #eaeaea;
+  --input-border: #444;
+  --btn-bg: #222;
+  --btn-color: #eaeaea;
+  --btn-border: #42b983;
+  --scrollbar-bg: #222;
+  --scrollbar-thumb: #444;
+  --code-bg: #252c36;
+  --code-color: #d8834a;    
+  --code-border: #006efd;
+}
+
+body.dark-theme {
+  background: var(--main-bg);
+  color: var(--main-color);
+}
+
+
+body.dark-theme .markdown-section span {
+    color: #109cff;
+    font-weight: 600
+}
+body.dark-theme .markdown-section strong {
+    color: #0aa4c7;
+    font-weight: 600
+}
+
+body.dark-theme .sidebar {
+  background: var(--sidebar-bg);
+}
+body pre,
+body code,
+body .markdown-section pre,
+body .markdown-section code {
+  background: var(--code-bg) !important;
+  color: var(--code-color) !important;
+}
+
+
+
+/* 代码块暗黑样式 */
+body.dark-theme pre,
+body.dark-theme code,
+body.dark-theme .markdown-section pre,
+body.dark-theme .markdown-section code {
+  background: var(--code-bg) !important;
+  color: var(--code-color) !important;
+}
+
+body.dark-theme .search{
+    border-bottom:1px solid rgb(61, 78, 85) !important;;
+}
+
+body.dark-theme pre{
+    
+  border: 1px solid var(--code-border) !important;
+}
+body pre{
+    
+  border: 1px solid var(--code-border) !important;
+}
+
+body.dark-theme pre,
+body.dark-theme .markdown-section pre {
+  box-shadow: 0 2px 8px rgba(20,40,80,0.25);
+}
+
+/*  */
+
+
+/* 代码高亮优化（prism.js） */
+body.dark-theme .token.comment,
+body.dark-theme .token.prolog,
+body.dark-theme .token.doctype,
+body.dark-theme .token.cdata {
+  color: #6a9955;
+}
+body.dark-theme .token.punctuation {
+  color: #d4d4d4;
+}
+body.dark-theme .token.property,
+body.dark-theme .token.tag,
+body.dark-theme .token.comment,
+body.dark-theme .token.prolog,
+body.dark-theme .token.doctype,
+body.dark-theme .token.cdata {
+  color: #5c7e99;
+}
+body.dark-theme .token.punctuation {
+  color: #b6c2e1;
+}
+body.dark-theme .token.property,
+body.dark-theme .token.tag,
+body.dark-theme .token.constant,
+body.dark-theme .token.symbol,
+body.dark-theme .token.deleted {
+  color: #ffb86c;
+}
+body.dark-theme .token.boolean,
+body.dark-theme .token.number {
+  color: #8be9fd;
+}
+body.dark-theme .token.selector,
+body.dark-theme .token.attr-name,
+body.dark-theme .token.string,
+body.dark-theme .token.char,
+body.dark-theme .token.builtin,
+body.dark-theme .token.inserted {
+  color: #a3e7a3;
+}
+body.dark-theme .token.operator,
+body.dark-theme .token.entity,
+body.dark-theme .token.url,
+body.dark-theme .language-css .token.string,
+body.dark-theme .style .token.string {
+  color: #c3e1ff;
+}
+body.dark-theme .token.atrule,
+body.dark-theme .token.attr-value,
+body.dark-theme .token.keyword {
+  color: #82aaff;
+}
+body.dark-theme .token.function,
+body.dark-theme .token.class-name {
+  color: #ffd700;
+}
+body.dark-theme .token.regex,
+body.dark-theme .token.important {
+  color: #ff5370;
+  background: var(--input-bg) !important;
+  color: var(--input-color) !important;
+  border: 1px solid var(--input-border) !important;
+}
+
+/* 按钮暗黑样式 */
+body.dark-theme button,
+body.dark-theme .btn,
+body.dark-theme input[type="button"],
+body.dark-theme input[type="submit"] {
+  background: transparent;
+  color: var(--btn-color) !important;
+}
+
+body.dark-theme input[type="button"]:hover,
+body.dark-theme input[type="submit"]:hover {
+  background: var(--accent) !important;
+  color: #fff !important;
+}
+
+/* 搜索框暗黑样式 */
+body.dark-theme .search input {
+  background: var(--input-bg) !important;
+  color: var(--input-color) !important;
+  border: 1px solid var(--input-border) !important;
+}
+
+/* 滚动条暗黑样式 */
+body.dark-theme ::-webkit-scrollbar {
+  background: var(--scrollbar-bg);
+}
+body.dark-theme ::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
+
+/* 主题切换按钮样式 */
+#theme-toggle-btn button {
+  background: var(--sidebar-bg);
+  color: var(--main-color);
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.3s, color 0.3s;
+}
+#theme-toggle-btn button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+
