@@ -40,6 +40,19 @@
         depth: 3,               // 搜索标题层级(h1-h3)
         namespace: 'docs',      // 本地存储命名空间
         hideOtherSidebarContent: false // 保持侧边栏完整
+      },
+
+      //一键复制插件的配置
+      copyCode: {
+        buttonText: {
+          '/zh-cn/': '复制', // 中文环境
+          '/': 'Copy to clipboard' // 默认英文
+        },
+        successText: {
+          '/zh-cn/': '已复制',
+          '/': 'Copied!'
+        },
+        errorText: '复制失败' // 错误提示
       }
     };
   </script>
@@ -57,7 +70,8 @@
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
 
-  <!-- 可选：增强搜索体验 -->
+  <!-- 引入一键复制插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <style>
     /* 搜索框样式优化 */
     .search input {
@@ -70,9 +84,57 @@
 
     /* 搜索结果高亮 */
     mark {
-      background: #fffd38 ;
+      background: #fffd38;
       color: #000;
     }
+
+    /* 一键复制按钮样式 */
+    /* 基础按钮样式 */
+    .docsify-copy-code-button {
+      /* 尺寸与定位 */
+      position: absolute;
+      top: 8px !important;
+      right: 8px !important;
+      width: 45px;
+      height: 26px;
+      font-size: small;
+      padding: 0 !important;
+      background-color: transparent;
+      /* 形状与边框 */
+      border-radius: 3px;
+      border: 1px solid #42b98355;
+      /* 半透明绿色边框 */
+      color: black;
+      /* 交互控制 */
+      opacity: 0.7;
+      /* 平滑过渡 */
+      cursor: pointer;
+      /* 去除阴影 */
+      box-shadow: none !important;
+      
+    }
+
+    /* 悬停效果 */
+    .docsify-copy-code-button:hover {
+      opacity: 1;
+      background-color: #42b98344 !important;
+    /* 轻微放大 */
+      transform: scale(1.08);    
+      border-color: #42b983;
+    }
+
+    /* 点击反馈 */
+    .docsify-copy-code-button:active {
+      transform: scale(0.95);
+      /* 按压效果 */
+      background-color: #42b98366;
+    }
+
+    .docsify-copy-code-button .label{
+      background-color: transparent !important;
+    }
+
+   
   </style>
 </body>
 
