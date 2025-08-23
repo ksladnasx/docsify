@@ -100,15 +100,18 @@ export default defineNuxtConfig({
     localApiEndpoint: '/nuxt-icon',
   },
 })
-
-// 使用
-// <Icon name="simple-icons:github" size="1rem" />
-
-vscode 插件：Iconify IntelliSense
-图标库：https://icones.js.org/
 ```
+使用icon:
+```vue
+<Icon name="simple-icons:github" size="1rem" />
+```
+> vscode 插件（用于代码中实时预览icon图标）：Iconify IntelliSense 
+>
+> Icon的图标库（进入后复制icon名字然后修改Icon标签的name值）：https://icones.js.org/ 
+
 
 ### pinia 
+引入以进行全局的状态管理
 ```bash
 pnpm i pinia @pinia/nuxt
 ```
@@ -336,9 +339,9 @@ console.log(id);
 ```
 
 ## 了解 useFetch 和 $fetch
-
+> 官方文档地址:
 [$fetch](https://nuxt.com/docs/4.x/getting-started/data-fetching#fetch)
-[useFetch](https://nuxt.com/docs/4.x/getting-started/data-fetching#usefetch)
+，[useFetch](https://nuxt.com/docs/4.x/getting-started/data-fetching#usefetch)
 
 useFetch 和 $fetch 都是 Nuxt 提供的用于数据获取的 API
 它们之间的主要区别是：useFetch 是在服务端执行，$fetch 在服务端执行一次、客户端执行一次
@@ -447,8 +450,7 @@ export async function $http<T = any>(options: IHttpOptions): Promise<IApiRespons
 
 这里面用到的 VITE_API_BASE、VITE_API_SUCCESS_CODE 是写在 .env 配置文件里的，需要以VITE_ 开头，后续就可以从 import.meta.env 里获取
 
-.env 
-./.env
+根目录创建一个.env文件：
 ```
 VITE_API_BASE=http://localhost:3000
 
@@ -457,9 +459,10 @@ VITE_API_SUCCESS_CODE=200
 
 ## 编写简单的 api
 
-[server](https://nuxt.com/docs/4.x/guide/directory-structure/server)
-app 下创建 server 文件夹 
-server 下 新建 data.ts
+> 官网文档：[server](https://nuxt.com/docs/4.x/guide/directory-structure/server)
+
+在与app文件夹同级的目录（即项目的根目录）下创建 server 文件夹 
+server 下 新建 `data.ts`
 ```ts
 export const list = [
   {
@@ -501,7 +504,7 @@ export const list = [
 ];
 ```
 
-serer 下新建 api/posts/list.ts
+server 下新建 api/posts/list.ts
 ```ts
 import { list } from "../../data";
 
@@ -510,7 +513,8 @@ export default defineEventHandler((event) => {
 });
 ```
 
-## 首页 ssr 渲染
+## 首页服务端渲染（SSR）
+>服务端渲染，请求会返回html给你
 pages/index.vue
 ```vue
 <template>
@@ -527,11 +531,12 @@ pages/index.vue
 </template>
 
 <script lang="ts" setup>
-const { data } = await useFetch("/api/posts/list");
+const { data } = await useFetch<any>("/api/posts/list");
 </script>
 ```
 
-## 首页 csr 渲染
+## 首页客户端渲染（CSR）
+>利用onMounted触发生命周期获取数据，直接Fetch获取数据，不会返回html给你
 pages/index.vue
 ```vue
 <template>
@@ -559,8 +564,8 @@ onMounted(async () => {
 });
 </script>
 ```
-
-区别就在请求数据时机，ssr 是在服务端加载数据和渲染，csr 是在客户端渲染完成再加载数据
+二者区别：
+*区别就在请求数据时机，ssr 是在服务端加载数据和渲染然后给html给客户端，csr则是在客户端渲染完成后再加载数据*
 
 ## 实在是需要客户端渲染怎么办 
 使用 ClientOnly 组件包裹需要渲染的内容

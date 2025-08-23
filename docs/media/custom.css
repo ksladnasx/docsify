@@ -135,7 +135,7 @@ body code,
 body .markdown-section pre,
 body .markdown-section code {
   background: var(--code-bg) !important;
-  color: var(--code-color) !important;
+  color: var(--code-color) ;
   border: 1px solid var(--code-border) !important;
   border-radius: 6px;
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
