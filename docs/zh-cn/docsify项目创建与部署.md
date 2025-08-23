@@ -74,7 +74,7 @@ docsify -v                  # 验证安装（显示版本号即成功）
 1. 将 `docs/` 目录推送到 GitHub 仓库
 2. 仓库设置 → Pages → 选择分支（如 `main`）和 `docs/` 目录
 3. 访问 `https://<用户名>.github.io/<仓库名>`
-> 本博客地址：
+> 本博客地址：[GithubPages](https://ksladnasx.github.io/docsify/#/zh-cn/nuxt)
 
 #### 选项二：Netlify（自动化部署）
 
