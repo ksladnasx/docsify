@@ -11,7 +11,7 @@
 
   // 页面加载时自动应用本地主题
   var saved = localStorage.getItem('docsify-theme');
-  if(saved === 'dark') {
+  if(saved === 'dark' ) {
     document.body.classList.add('dark-theme');
     btn.innerText = '☀️ 浅色模式';
   }
