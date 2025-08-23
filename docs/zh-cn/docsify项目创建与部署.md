@@ -23,7 +23,7 @@
 npm install -g docsify-cli  # 安装官方命令行工具
 docsify -v                  # 验证安装（显示版本号即成功）
 ```
-
+> 注意，当通过nvm切换了node的版本后，docsify-cli要重新安装一次
 ### 🚀 3. **初始化项目**
 
 - 创建项目目录并初始化：
@@ -74,6 +74,7 @@ docsify -v                  # 验证安装（显示版本号即成功）
 1. 将 `docs/` 目录推送到 GitHub 仓库
 2. 仓库设置 → Pages → 选择分支（如 `main`）和 `docs/` 目录
 3. 访问 `https://<用户名>.github.io/<仓库名>`
+> 本博客地址：
 
 #### 选项二：Netlify（自动化部署）
 
