@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Docsify + docsify-latex</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
-  <link rel="stylesheet" href="media/custom.css"> 
+  <link rel="stylesheet" href="media/custom.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
 </head>
 
@@ -16,13 +16,13 @@
 
   <!-- 核心Docsify库 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  
+
   <!-- 搜索功能实现 -->
   <script>
     window.$docsify = {
       name: '',
       repo: '',
-      loadSidebar: true,
+      loadSidebar: true,          // 启用侧边栏
       subMaxLevel: 3,             // 子菜单最大层级（建议2~4）
       coverpage: true,
       auto2top: true,
@@ -55,18 +55,18 @@
         errorText: '复制失败' // 错误提示
       },
 
+    
+
       // 以插件的形式导入代码样式
       plugins: [
-      function(hook) {
-        hook.doneEach(function() {
-          // 确保DOM更新后执行高亮
-          setTimeout(() => hljs.highlightAll(), 0)
-        })
-      }
-    ]
+        function (hook) {
+          hook.doneEach(function () {
+            // 确保DOM更新后执行高亮
+            setTimeout(() => hljs.highlightAll(), 0)
+          })
+        }
+      ]
     };
-
-
   </script>
 
   <!-- 侧边栏折叠插件 -->
@@ -92,8 +92,8 @@
   <!-- 添加 TypeScript 语法支持 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js"></script>
+
   <style>
-    
     /* 搜索框样式优化 */
     .search input {
       border-radius: 4px;
@@ -155,8 +155,6 @@
     .docsify-copy-code-button .label {
       background-color: transparent !important;
     }
-
-    
   </style>
 </body>
 

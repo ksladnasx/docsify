@@ -104,7 +104,7 @@ Vue CLI是Vue官方传统脚手架工具，适合需要更多配置选项的项�
 
 创建后的Vue3+TS项目典型结构如下：
 
-```markdown
+```
 my-vue3-ts-app/
 ├── node_modules/
 ├── public/
@@ -123,7 +123,7 @@ my-vue3-ts-app/
 ├── index.html         # 入口HTML
 ├── package.json
 ├── tsconfig.json      # TypeScript配置
-└── vite.config.ts     # Vite配置
+└── vite.config.ts     # Vite配置 
 ```
 
 ## TypeScript配置优化
