@@ -1,6 +1,5 @@
 /* 自定义浅色和深色主题样式 - 优化版 */
 :root {
-  /* 浅色主题 - 采用更柔和的配色 */
   --main-bg: #fafbfc;
   --main-color: #24292f;
   --sidebar-bg: #ffffff;
@@ -11,7 +10,7 @@
   --code-color: #24292f;
   --code-border: #d0d7de;
   --sidebar-active-bg: #f6f8fa;
-  --sidebar-active-color: #0969da;
+  --sidebar-active-color: #279847;
   --input-bg: #ffffff;
   --input-color: #24292f;
   --input-border: #d0d7de;
@@ -49,7 +48,6 @@ a {
   text-decoration: none;
   transition: color 0.2s ease;
 }
-
 a:hover {
   color: var(--link-hover);
   text-decoration: underline;
@@ -70,10 +68,10 @@ a:hover {
   margin: 2px 8px;
   transition: all 0.2s ease;
 }
-
 .sidebar-nav li > a:hover {
   background: var(--sidebar-active-bg);
   color: var(--sidebar-active-color);
+  text-decoration: none !important;
 }
 
 /* 深色主题 - 采用更舒适的深色配色 */
@@ -103,28 +101,29 @@ body.dark-theme {
   --border-color: #30363d;
   --shadow-light: rgba(1, 4, 9, 0.3);
   --shadow-medium: rgba(1, 4, 9, 0.4);
-}
-
-body.dark-theme {
   background: var(--main-bg);
   color: var(--main-color);
 }
 
-/* 深色主题下的侧边栏样式 */
+/* 深色主题下的侧边栏样式和字体 */
 body.dark-theme .sidebar {
   background: var(--sidebar-bg);
   box-shadow: 2px 0 8px var(--shadow-light);
+  color: #fff;
 }
-
+body.dark-theme .sidebar-nav,
+body.dark-theme .sidebar-nav li > a {
+  color: #d4d0d0;
+}
 body.dark-theme .sidebar-nav .active,
 body.dark-theme .sidebar-nav li.active > a {
   background: var(--sidebar-active-bg);
   color: var(--sidebar-active-color);
 }
-
 body.dark-theme .sidebar-nav li > a:hover {
   background: var(--sidebar-active-bg);
   color: var(--sidebar-active-color);
+  text-decoration: none !important;
 }
 
 /* 代码块样式优化 */
@@ -133,12 +132,11 @@ body code,
 body .markdown-section pre,
 body .markdown-section code {
   background: var(--code-bg) !important;
-  color: var(--code-color) ;
+  color: var(--code-color);
   border: 1px solid var(--code-border) !important;
   border-radius: 6px;
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 }
-
 body pre,
 body .markdown-section pre {
   box-shadow: 0 2px 8px var(--shadow-light);
@@ -153,11 +151,9 @@ body.dark-theme .token.doctype,
 body.dark-theme .token.cdata {
   color: #8b949e;
 }
-
 body.dark-theme .token.punctuation {
   color: #c9d1d9;
 }
-
 body.dark-theme .token.property,
 body.dark-theme .token.tag,
 body.dark-theme .token.constant,
@@ -165,12 +161,10 @@ body.dark-theme .token.symbol,
 body.dark-theme .token.deleted {
   color: #ff7b72;
 }
-
 body.dark-theme .token.boolean,
 body.dark-theme .token.number {
   color: #79c0ff;
 }
-
 body.dark-theme .token.selector,
 body.dark-theme .token.attr-name,
 body.dark-theme .token.string,
@@ -179,7 +173,6 @@ body.dark-theme .token.builtin,
 body.dark-theme .token.inserted {
   color: #a5d6ff;
 }
-
 body.dark-theme .token.operator,
 body.dark-theme .token.entity,
 body.dark-theme .token.url,
@@ -187,18 +180,15 @@ body.dark-theme .language-css .token.string,
 body.dark-theme .style .token.string {
   color: #ffa657;
 }
-
 body.dark-theme .token.atrule,
 body.dark-theme .token.attr-value,
 body.dark-theme .token.keyword {
   color: #ff7b72;
 }
-
 body.dark-theme .token.function,
 body.dark-theme .token.class-name {
   color: #d2a8ff;
 }
-
 body.dark-theme .token.regex,
 body.dark-theme .token.important {
   color: #ffa198;
@@ -208,7 +198,6 @@ body.dark-theme .token.important {
 body.dark-theme .search {
   border-bottom: 1px solid var(--border-color) !important;
 }
-
 body.dark-theme .search input {
   background: var(--input-bg) !important;
   color: var(--input-color) !important;
@@ -229,7 +218,6 @@ body.dark-theme input[type="submit"] {
   padding: 8px 16px;
   transition: all 0.2s ease;
 }
-
 body.dark-theme button:hover,
 body.dark-theme .btn:hover,
 body.dark-theme input[type="button"]:hover,
@@ -239,18 +227,15 @@ body.dark-theme input[type="submit"]:hover {
   border-color: var(--accent);
 }
 
-
 /* 滚动条样式优化 */
 ::-webkit-scrollbar {
   width: 8px;
   background: var(--scrollbar-bg);
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
@@ -268,7 +253,6 @@ body.dark-theme input[type="submit"]:hover {
   box-shadow: 0 1px 3px var(--shadow-light);
   transition: all 0.2s ease;
 }
-
 #theme-toggle-btn button:hover {
   background: var(--accent);
   color: #ffffff;
@@ -282,7 +266,6 @@ body.dark-theme .markdown-section span {
   color: var(--accent);
   font-weight: 500;
 }
-
 body.dark-theme .markdown-section strong {
   color: var(--accent-hover);
   font-weight: 600;
@@ -293,19 +276,6 @@ body.dark-theme .markdown-section strong {
   .sidebar {
     box-shadow: none;
   }
-  
-  #theme-toggle-btn button {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
-}
-
-/* 响应式优化 */
-@media (max-width: 768px) {
-  .sidebar {
-    box-shadow: none;
-  }
-  
   #theme-toggle-btn button {
     padding: 6px 12px;
     font-size: 13px;
@@ -323,43 +293,14 @@ body.dark-theme .markdown-section strong {
   transition: all 0.2s ease !important;
   box-shadow: none !important;
 }
-
-
-
-/* 深色主题下的侧边栏收起按钮 */
-body.dark-theme .sidebar-toggle {
-  background: transparent !important;
-  color: var(--main-color) !important;
-}
-
-
-
-
-/* 响应式优化 */
-@media (max-width: 768px) {
-  .sidebar {
-    box-shadow: none;
-  }
-  
-  #theme-toggle-btn button {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
-}
-
-
-
 .sidebar-toggle:hover {
   background: rgba(0, 0, 0, 0.05) !important;
   color: var(--accent) !important;
 }
-
-/* 深色主题下的侧边栏收起按钮 */
 body.dark-theme .sidebar-toggle {
   background: transparent !important;
   color: var(--main-color) !important;
 }
-
 body.dark-theme .sidebar-toggle:hover {
   background: rgba(255, 255, 255, 0.1) !important;
   color: var(--accent) !important;
@@ -380,11 +321,9 @@ body.dark-theme .sidebar-toggle:hover {
   transform: rotate(45deg) translate(30px, -10px);
   transition: all 0.3s ease;
 }
-
 .github-bookmark:hover {
   transform: rotate(45deg) translate(30px, -5px);
 }
-
 .github-bookmark a {
   display: block;
   background: linear-gradient(135deg, #24292e 0%, #586069 100%);
@@ -399,7 +338,6 @@ body.dark-theme .sidebar-toggle:hover {
   position: relative;
   overflow: hidden;
 }
-
 .github-bookmark a::before {
   content: '';
   position: absolute;
@@ -410,11 +348,9 @@ body.dark-theme .sidebar-toggle:hover {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s ease;
 }
-
 .github-bookmark a:hover::before {
   left: 100%;
 }
-
 .github-bookmark a::after {
   content: '';
   position: absolute;
@@ -426,18 +362,15 @@ body.dark-theme .sidebar-toggle:hover {
   border-right: 15px solid transparent;
   border-top: 15px solid #1a1e22;
 }
-
 .github-bookmark i {
   margin-right: 8px;
   font-size: 16px;
 }
-
 /* 深色主题下的书签样式 */
 body.dark-theme .github-bookmark a {
   background: linear-gradient(135deg, #1a1e22 0%, #24292e 100%);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
-
 body.dark-theme .github-bookmark a::after {
   border-top-color: #0d1117;
 }
@@ -449,7 +382,6 @@ body.dark-theme .github-bookmark a::after {
   right: 20px;
   z-index: 1001;
 }
-
 .bg-toggle-btn button {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -463,13 +395,11 @@ body.dark-theme .github-bookmark a::after {
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
 .bg-toggle-btn button:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: scale(1.1) rotate(180deg);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-
 .bg-toggle-btn button:active {
   transform: scale(0.95);
 }
@@ -479,24 +409,102 @@ body.dark-theme .github-bookmark a::after {
   .github-bookmark {
     transform: rotate(45deg) translate(25px, -8px);
   }
-  
   .github-bookmark a {
     padding: 10px 30px 6px 30px;
     font-size: 12px;
   }
-  
   .github-bookmark i {
     font-size: 14px;
   }
-  
   .bg-toggle-btn {
     top: 15px;
     right: 15px;
   }
-  
   .bg-toggle-btn button {
     width: 45px;
     height: 45px;
     font-size: 16px;
   }
+}
+
+/* 主题切换开关样式（含图标与动画） */
+.theme-switch-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 12px 0;
+}
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 28px;
+}
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #e0e6ed;
+  border-radius: 28px;
+  transition: background 0.3s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background: #ffb507;
+  transition: transform 0.3s, background 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.theme-switch input:checked + .slider {
+  background: #616d89;
+}
+.theme-switch input:checked + .slider:before {
+  transform: translateX(26px);
+  background: #385c8b;
+}
+/* 图标样式与动画 */
+.icon-sun, .icon-moon {
+  position: absolute;
+  top: 3px;
+  font-size: 17px;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.icon-sun {
+  left: 2.6px;
+  top: -0.8px;
+  opacity: 1;
+}
+.icon-moon {
+  right: 2.6px;
+  top: -0.8px;
+  opacity: 0;
+}
+.theme-switch input:checked ~ .icon-sun {
+  opacity: 0;
+}
+.theme-switch input:checked ~ .icon-moon {
+  opacity: 1;
+}
+/* 暗色模式下开关外观 */
+body.dark-theme .slider {
+  background: #242730;
+}
+body.dark-theme .slider:before {
+  background: #ffb86c;
+}
+
+/* 暗色模式下 coverpage 背景色固定为深色 */
+body.dark-theme .cover {
+  background: linear-gradient(135deg, #181c24 0%, #232a3a 100%) !important;
 }

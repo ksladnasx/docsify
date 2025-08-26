@@ -1,14 +1,12 @@
 <!-- _coverpage.md -->
 
-
-
 <!-- 内容层 -->
 <div style="position:relative;z-index:2;text-align:center;padding:8% 0;color:#fff;font-family:'Poppins', sans-serif;">
   <!-- 头像与标题 -->   
   <img src="media/avatar.jpg" style="width:230px;height:230px;border-radius:50%;border:3px solid rgba(255,255,255,0.3);box-shadow:0 8px 25px rgba(0,0,0,0.2);">
   <h1 style="font-family:'Pacifico', cursive;font-size:3.5rem;margin:15px 0;text-shadow:0 2px 4px rgba(0,0,0,0.2);">曉&凾
 </h1>
-  <p style="font-size:1.3rem;letter-spacing:1px;opacity:0.9;">一只无所事事的Vue前端开发者 ✨</p>
+  <p style="font-size:1.3rem;letter-spacing:1px;opacity:0.9;" class="discription">   一只无所事事的Vue前端开发者 ✨</p>
   
   <!-- 动态标签 -->
   <div class="tag-cloud" style="margin:25px auto;max-width:600px;">
@@ -95,8 +93,12 @@
       align-items: center;
       justify-content: center;
   }
-
-  
+ .discription{
+  color:black;
+  }
+  body.dark-theme .discription{
+  color:white;
+  }
   /* 标签浮动动画 */
   .tags {
     color:black;
@@ -118,6 +120,9 @@
     50% { transform: translateY(-15px); }
   }
   
+  body.dark-theme .tags{
+    color: rgba(255, 255, 255, 1);
+  }
   /* 滚动提示动画 */
   .scroll-hint {
     margin-top: 50px;
