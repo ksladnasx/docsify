@@ -22,7 +22,6 @@
   var moon = document.createElement('span');
   moon.className = 'icon-moon';
   moon.textContent = '🌙';
-
   label.appendChild(input);
   label.appendChild(slider);
   label.appendChild(sun);
