@@ -8,4 +8,6 @@
 * [公式插件测试](zh-cn/插件公式示例.md)
 * [硅谷甄选项目笔记](zh-cn/硅谷甄选项目笔记.md)
 * [Nuxt4快速上手](zh-cn/nuxt.md)
+* [Nginx](zh-cn/Nginx.md)
 * [README](README.md)
+
