@@ -9,5 +9,7 @@
 * [硅谷甄选项目笔记](zh-cn/硅谷甄选项目笔记.md)
 * [Nuxt4快速上手](zh-cn/nuxt.md)
 * [Nginx](zh-cn/Nginx.md)
+* [实习经验](zh-cn/实习经验.md)
 * [README](README.md)
+
 

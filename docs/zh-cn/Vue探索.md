@@ -168,7 +168,7 @@ declare module '*.vue' {
 1. **安装Vue Router**
 
    ```
-   npm install vue-router@4
+   npm install vue-router
    ```
 
    配置示例：
@@ -190,15 +190,37 @@ declare module '*.vue' {
    
    export default router
    ```
-
+    App.vue文件配置：
+  ```vue
+    <template>
+  <router-view></router-view>
+    </template>
+  ```
 2. **安装Pinia(推荐替代Vuex)**
 
    ```
    npm install pinia
    ```
 
-   配置示例：
+   然后`main.ts`中进行挂载:
 
+   ```ts
+   import { createApp } from "vue";
+   import "./style.css";
+   import App from "./App.vue";
+   import router from "./router";
+   import { createPinia } from "pinia";
+   
+   const app = createApp(App);
+   app.use(createPinia());
+   app.use(router);
+   
+   app.mount("#app");
+   
+   ```
+   
+   配置示例：
+   
    ```ts
    // src/stores/counter.ts
    import { defineStore } from 'pinia'
@@ -215,6 +237,46 @@ declare module '*.vue' {
      }
    })
    ```
+
+​		*结合请求的配置示例*
+
+```ts
+// src\store\userstore.ts
+import { defineStore } from "pinia";
+import axios from "axios";
+
+export const useUserStore = defineStore("user", {
+   //实现user的持久化存储，每次刷新，在 state 初始化时读取本地缓存保证user不变：
+  state: () => ({
+    user: (() => {
+      const localUser = localStorage.getItem("user");
+      return localUser ? JSON.parse(localUser) : null;
+    })() as null | {
+      id: number;
+      name: string;
+      age: number;
+      email: string;
+      phone: string;
+    },
+  }),
+  actions: {
+    //发请求根据id获取信息
+    async fetchUserDetail(id: string) {
+      const res = await axios.post("/api/user/detail", { id });
+        //每次请求成功都修改本地缓存，更新state中的user
+      this.user = res.data.data;
+      localStorage.setItem("user", JSON.stringify(this.user));
+    },
+      //清除本地缓存
+    clearUser() {
+      this.user = null;
+      localStorage.removeItem("user");
+    }
+  },
+});
+```
+
+
 
 ## 开发与构建命令
 
@@ -429,6 +491,28 @@ my-project/
 ├── tsconfig.json     # TypeScript 配置（若选中）
 └── .eslintrc.js      # ESLint 配置（若选中）
 ```
+
+### 最终的main.ts文件
+
+```ts
+import { createApp } from "vue";
+import "./style.css";
+import App from "./App.vue";
+import router from "./router";
+import { createPinia } from "pinia";
+import ElementPlus from 'element-plus';
+import 'element-plus/dist/index.css'; // 核心样式
+import 'element-plus/theme-chalk/dark/css-vars.css'; // 深色主题支持 
+
+const app = createApp(App);
+app.use(createPinia());
+app.use(router);
+app.use(ElementPlus);
+
+app.mount("#app");
+```
+
+
 
 # i18n
 
